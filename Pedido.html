@@ -1,87 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quer namorar comigo?</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Comic Sans MS', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffebee;
+            background: linear-gradient(to bottom, #ff66cc, #ff99cc);
         }
 
         #div {
             text-align: center;
-            background-color: #ffc1e3;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6);
-            border: 5px solid #ff6f91;
+            background-color: #ffb3b3;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4);
+            border: 5px solid #ff3366;
         }
 
         h1 {
-            color: #ff69b4;
-            font-size: 2rem;
-            margin-bottom: 20px;
+            color: #ff0033;
             font-weight: bold;
+            font-size: 32px;
         }
 
         .btn {
-            padding: 12px 25px;
+            padding: 15px 30px;
             margin: 10px;
             border: none;
-            border-radius: 20px;
+            border-radius: 30px;
             cursor: pointer;
+            font-size: 20px;
             color: white;
-            background-color: #ff6f91;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #ff9bb0;
         }
 
         .btn:first-of-type {
-            background-color: #ff3366;
+            background-color: #ff0033;
         }
 
         .btn:first-of-type:hover {
-            background-color: #ff8b94;
+            background-color: #cc0033;
+        }
+
+        .btn:last-of-type {
+            background-color: #ff3366;
+        }
+
+        .btn:last-of-type:hover {
+            background-color: #ff99cc;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+            border-radius: 50%;
+            animation: fall 2s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 
 <body>
     <div id="div">
-        <h1>Aceita namorar comigo??</h1>
+        <h1>Aceita namorar comigo?</h1>
         <button class="btn" onclick="SIM()">SIM</button>
         <button class="btn" onmouseover="DESVIA(this)">NÃO</button>
     </div>
 
     <script>
         function SIM() {
-            alert("AÍ SIM HEIN. ESCOLHEU DIREITINHO");
+            alert("Aí sim! Você escolheu direito.");
+            chuvaDeConfetes();
         }
 
         function DESVIA(t) {
-            var btn = t;
-            btn.style.position = "absolute";
-            btn.style.bottom = geraPosicao(10, 90);
-            btn.style.left = geraPosicao(10, 90);
-            console.log("ih, não deu");
+            var randomLeft = Math.random() * (window.innerWidth - t.offsetWidth);
+            var randomTop = Math.random() * (window.innerHeight - t.offsetHeight);
+            t.style.position = "absolute";
+            t.style.left = randomLeft + "px";
+            t.style.top = randomTop + "px";
+        }
+
+        function chuvaDeConfetes() {
+            const numConfetes = 50;
+            const colors = ['red', 'pink', 'yellow', 'purple', 'green', 'blue'];
+
+            for (let i = 0; i < numConfetes; i++) {
+                const confete = document.createElement('div');
+                confete.className = 'confetti';
+                confete.style.left = geraPosicao(0, 100);
+                confete.style.top = geraPosicao(0, 10);
+                confete.style.width = confete.style.height = Math.floor(Math.random() * 10 + 5) + 'px';
+                confete.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confete.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+                document.body.appendChild(confete);
+            }
         }
 
         function geraPosicao(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min) + "%";
+            return Math.random() * (max - min) + min + "%";
         }
     </script>
 </body>
