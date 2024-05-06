@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Quer namorar comigo???</title>
+    <title>Quer namorar comigo?</title>
     <style>
         body {
             font-family: 'Comic Sans MS', sans-serif;
@@ -22,6 +22,8 @@
             border-radius: 20px;
             box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4);
             border: 5px solid #ff3366;
+            width: 80%;
+            max-width: 400px;
         }
 
         h1 {
@@ -36,8 +38,10 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 24px;
             color: white;
+            width: 80%;
+            max-width: 250px;
         }
 
         .btn:first-of-type {
@@ -71,19 +75,30 @@
                 opacity: 0;
             }
         }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="div">
-        <h1>Aceita namorar comigo?</h1>
+        <h1>Aceita namorar comigo???</h1>
         <button class="btn" onclick="SIM()">SIM</button>
         <button class="btn" onmouseover="DESVIA(this)">NÃO</button>
     </div>
 
     <script>
         function SIM() {
-            alert("AÍ SIM!!! ESCOLHEU DIREITINHO");
+            alert("AÍ SIM, HEIN. ESCOLHEU DIREITNHO!!!");
             chuvaDeConfetes();
         }
 
