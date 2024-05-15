@@ -36,20 +36,30 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #f7931e; /* Cor da marca */
         }
 
-        .botao-logo1, .botao-logo {
-            background: none;
-            border: none;
-            font-size: 26px;
-            color: #f7931e;
+        .OJORNALDOPOVO {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
             text-transform: uppercase;
-            padding: 0;
-            cursor: pointer;
-            outline: none;
-            font-weight: bold;
         }
-
+        @media only screen and (max-width: 600px) {
+            header {
+                height: auto;
+                padding: 20px 20px;
+            }
+            .marca {
+                font-size: 18px;
+                gap: 5px;
+            }
+            .OJORNALDOPOVO {
+                font-size: 20px;
+            }
+        }
         .linha {
             width: 50px;
             height: 3px;
@@ -112,7 +122,7 @@
             color: #f5f5f7;
         }
 
-        .botao-ler-mais1 {
+        .botao-ler-mais {
             background-color: #f7931e;
             color: #f5f5f7;
             border: none;
@@ -127,94 +137,6 @@
             margin-top: auto;
             position: relative;
             top: -3px;
-            text-decoration: none;
-        }
-
-        .botao-ler-mais:hover {
-            background-color: #ff6d00;
-        }
-
-        .botao-ler-mais2 {
-            background-color: #f7931e;
-            color: #f5f5f7;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: bold;
-            align-self: flex-end;
-            margin-top: auto;
-            position: relative;
-            top: -15px;
-            text-decoration: none;
-        }
-
-        .botao-ler-mais:hover {
-            background-color: #ff6d00;
-        }
-
-        .botao-ler-mais3 {
-            background-color: #f7931e;
-            color: #f5f5f7;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: bold;
-            align-self: flex-end;
-            margin-top: auto;
-            position: relative;
-            top: -20px;
-            text-decoration: none;
-        }
-
-        .botao-ler-mais:hover {
-            background-color: #ff6d00;
-        }
-
-        .botao-ler-mais4 {
-            background-color: #f7931e;
-            color: #f5f5f7;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: bold;
-            align-self: flex-end;
-            margin-top: auto;
-            position: relative;
-            top: -3px;
-            text-decoration: none;
-        }
-
-        .botao-ler-mais:hover {
-            background-color: #ff6d00;
-        }
-
-        .botao-ler-mais5 {
-            background-color: #f7931e;
-            color: #f5f5f7;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: bold;
-            align-self: flex-end;
-            margin-top: auto;
-            position: relative;
-            top: -1px;
             text-decoration: none;
         }
 
@@ -230,23 +152,8 @@
         <div class="marca">
             <h1>The</h1>
             <h1>Jornal</h1>
-            </div>
-            <style>
-    .marca {
-        color: #f7931e;
-    }
-                
-    .OJORNALDOPOVO {
-        position: fixed;
-        top: 10;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 30px;
-        text-transform: uppercase;
-    }
-      </style>
-              
-                <div class="OJORNALDOPOVO">O JORNAL DO POVO</div>
+        </div>
+        <div class="OJORNALDOPOVO">O JORNAL DO POVO</div>
     </header>
 
     <section class="noticias">
@@ -255,7 +162,7 @@
             <img src="jonathan cabaço gremio 300x200 (2).png" alt="Imagem de notícia">
             <h2>Jonathan, o Apresentador do Tempo com Estilo Único!</h2>
             <p>Sensação nas redes sociais: Apresentador Jonathan transforma previsão do tempo em um show imperdível...</p>
-            </style><a href="Jonathan.html" class="botao-ler-mais1">Ler mais</a> 
+            <a href="Jonathan.html" class="botao-ler-mais">Ler mais</a>
         </div>
 
         <!-- Notícia 2 -->
@@ -263,7 +170,7 @@
             <img src="ismael brigadeiro.png" alt="Imagem de notícia">
             <h2>Chef Ismael Maria Braga inova na doçaria com brigadeiros gourmet inéditos.</h2>
             <p>Um sabor que você nunca imaginou e uma experiência que vai além do paladar: Ismael Maria Braga está transformando a arte da doçaria!</p>
-            <a href="Ismael.html" class="botao-ler-mais2">Ler mais</a>
+            <a href="Ismael.html" class="botao-ler-mais">Ler mais</a>
         </div>
 
         <!-- Notícia 3 -->
@@ -271,7 +178,7 @@
             <img src="daniel e eu.png" alt="Imagem de notícia">
             <h2>Daniel e Lucas desenvolvem aplicativo inovador para melhorar o cotidiano dos usuários.</h2>
             <p>Conheça o aplicativo revolucionário que simplifica sua vida com tecnologia de ponta...</p>
-            <a href="DL.html" class="botao-ler-mais3">Ler mais</a>
+            <a href="DL.html" class="botao-ler-mais">Ler mais</a>
         </div>
 
         <!-- Notícia 4 -->
@@ -279,7 +186,7 @@
             <img src="panda 300x200.png" alt="Imagem de notícia">
             <h2>Panda Escapa do Recinto e É Encontrado Saboreando Biscoitos na Cozinha do Zoológico</h2>
             <p>Uma fuga doce! Ming, o panda, leva sua busca por biscoitos a um novo nível...</p>
-            <a href="panda.html" class="botao-ler-mais4">Ler mais</a>
+            <a href="panda.html" class="botao-ler-mais">Ler mais</a>
         </div>
 
         <!-- Notícia 5 -->
@@ -287,8 +194,9 @@
             <img src="otto 300x200.png" alt="Imagem de notícia">
             <h2>Jovem Soldado Victor Roberto Otto Recebe Prestigioso Prêmio no Exército aos 18 Anos</h2>
             <p>Um exemplo inspirador de dedicação e liderança entre os jovens soldados...</p>
-            <a href="victor.html" class="botao-ler-mais5">Ler mais</a>
+            <a href="victor.html" class="botao-ler-mais">Ler mais</a>
         </div>
     </section>
 </body>
+
 </html>
