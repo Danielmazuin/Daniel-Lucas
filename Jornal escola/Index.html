@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Notícias</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1e;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            justify-content: space-between;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .botao-logo1, .botao-logo {
+            background: none;
+            border: none;
+            font-size: 26px;
+            color: #f7931e;
+            text-transform: uppercase;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+            font-weight: bold;
+        }
+
+        .linha {
+            width: 50px;
+            height: 3px;
+            background-color: #f7931e;
+        }
+
+        .titulo-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5f5f7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .noticias {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .cartao-noticia {
+            background-color: #2c2c2e;
+            width: 300px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            margin: 16px;
+            height: 420px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cartao-noticia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cartao-noticia img {
+            width: 100%;
+            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .cartao-noticia h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #f7931e;
+            font-weight: bold;
+        }
+
+        .cartao-noticia p {
+            font-size: 0.95rem;
+            margin: 10px 0;
+            color: #f5f5f7;
+        }
+
+        .botao-ler-mais1 {
+            background-color: #f7931e;
+            color: #f5f5f7;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: bold;
+            align-self: flex-end;
+            margin-top: auto;
+            position: relative;
+            top: -3px;
+            text-decoration: none;
+        }
+
+        .botao-ler-mais:hover {
+            background-color: #ff6d00;
+        }
+
+        .botao-ler-mais2 {
+            background-color: #f7931e;
+            color: #f5f5f7;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: bold;
+            align-self: flex-end;
+            margin-top: auto;
+            position: relative;
+            top: -15px;
+            text-decoration: none;
+        }
+
+        .botao-ler-mais:hover {
+            background-color: #ff6d00;
+        }
+
+        .botao-ler-mais3 {
+            background-color: #f7931e;
+            color: #f5f5f7;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: bold;
+            align-self: flex-end;
+            margin-top: auto;
+            position: relative;
+            top: -20px;
+            text-decoration: none;
+        }
+
+        .botao-ler-mais:hover {
+            background-color: #ff6d00;
+        }
+
+        .botao-ler-mais4 {
+            background-color: #f7931e;
+            color: #f5f5f7;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: bold;
+            align-self: flex-end;
+            margin-top: auto;
+            position: relative;
+            top: -3px;
+            text-decoration: none;
+        }
+
+        .botao-ler-mais:hover {
+            background-color: #ff6d00;
+        }
+
+        .botao-ler-mais5 {
+            background-color: #f7931e;
+            color: #f5f5f7;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: bold;
+            align-self: flex-end;
+            margin-top: auto;
+            position: relative;
+            top: -1px;
+            text-decoration: none;
+        }
+
+        .botao-ler-mais:hover {
+            background-color: #ff6d00;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="marca">
+            <h1>The</h1>
+            <h1>Jornal</h1>
+            </div>
+            <style>
+    .marca {
+        color: #f7931e;
+    }
+                
+    .OJORNALDOPOVO {
+        position: fixed;
+        top: 10;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+      </style>
+              
+                <div class="OJORNALDOPOVO">O JORNAL DO POVO</div>
+    </header>
+
+    <section class="noticias">
+        <!-- Notícia 1 -->
+        <div class="cartao-noticia">
+            <img src="jonathan cabaço gremio 300x200 (2).png" alt="Imagem de notícia">
+            <h2>Jonathan, o Apresentador do Tempo com Estilo Único!</h2>
+            <p>Sensação nas redes sociais: Apresentador Jonathan transforma previsão do tempo em um show imperdível...</p>
+            </style><a href="Jonathan.html" class="botao-ler-mais1">Ler mais</a> 
+        </div>
+
+        <!-- Notícia 2 -->
+        <div class="cartao-noticia">
+            <img src="ismael brigadeiro.png" alt="Imagem de notícia">
+            <h2>Chef Ismael Maria Braga inova na doçaria com brigadeiros gourmet inéditos.</h2>
+            <p>Um sabor que você nunca imaginou e uma experiência que vai além do paladar: Ismael Maria Braga está transformando a arte da doçaria!</p>
+            <a href="Ismael.html" class="botao-ler-mais2">Ler mais</a>
+        </div>
+
+        <!-- Notícia 3 -->
+        <div class="cartao-noticia">
+            <img src="daniel e eu.png" alt="Imagem de notícia">
+            <h2>Daniel e Lucas desenvolvem aplicativo inovador para melhorar o cotidiano dos usuários.</h2>
+            <p>Conheça o aplicativo revolucionário que simplifica sua vida com tecnologia de ponta...</p>
+            <a href="DL.html" class="botao-ler-mais3">Ler mais</a>
+        </div>
+
+        <!-- Notícia 4 -->
+        <div class="cartao-noticia">
+            <img src="panda 300x200.png" alt="Imagem de notícia">
+            <h2>Panda Escapa do Recinto e É Encontrado Saboreando Biscoitos na Cozinha do Zoológico</h2>
+            <p>Uma fuga doce! Ming, o panda, leva sua busca por biscoitos a um novo nível...</p>
+            <a href="panda.html" class="botao-ler-mais4">Ler mais</a>
+        </div>
+
+        <!-- Notícia 5 -->
+        <div class="cartao-noticia">
+            <img src="otto 300x200.png" alt="Imagem de notícia">
+            <h2>Jovem Soldado Victor Roberto Otto Recebe Prestigioso Prêmio no Exército aos 18 Anos</h2>
+            <p>Um exemplo inspirador de dedicação e liderança entre os jovens soldados...</p>
+            <a href="victor.html" class="botao-ler-mais5">Ler mais</a>
+        </div>
+    </section>
+</body>
+</html>
